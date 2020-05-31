@@ -1,0 +1,59 @@
+https://templated.co/2
+template of website
+
+https://realpython.com/installing-python/#macos-mac-os-x
+
+ssh -i /Users/yibozhu/Downloads/"key.pem" ubuntu@100.24.116.222
+
+https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/
+copy directory from remote to local. login in local:
+scp -r -i /Users/yibozhu/Downloads/"key.pem" ubuntu@100.24.116.222:/var/www/testfile /Users/yibozhu/Downloads
+
+copy file from remote to local. login in local:
+scp  -i /Users/yibozhu/Downloads/"key.pem" ubuntu@100.24.116.222:/var/www/testfile.py /Users/yibozhu/Downloads
+
+/////////////////////////////////////////////////////////
+Instruction：
+
+Phase I:
+Project 2: Decide what tool to use and what steps to involve. Optional: Complete initial steps.
+Project 3: Decide what tool to use and draw a system architecture(component)/data flow diagram.
+
+Create a web app that is hosted by one or more service(s) from:
+	Elastic Beanstalk
+	AWS Amplify
+	Amazon Lightsail
+	AWS Lambda
+Redesign our CSCI department website:
+	http://sciences.aum.edu/departments/math-and-computer-science
+Besides the existing 9 pages (they can be static pages), you need to add one extra page for GA/TA application. Requirements:
+	It should be a dynamic page  (python, php, jsp, node.js etc.)
+	It contains a html form to submit applicant’s information:
+		name, student number, e-mail address
+		resume (it should be uploaded through html input “file upload” elements)
+	Auto scale up: e.g. hard drive space, network etc.
+
+Example: (php) https://www.w3schools.com/php/php_file_upload.asp
+Example: (Node) https://www.w3schools.com/nodejs/nodejs_uploadfiles.asp
+You can test it locally before deploy it to the cloud.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
