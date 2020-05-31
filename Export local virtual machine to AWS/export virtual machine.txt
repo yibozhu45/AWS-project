@@ -1,0 +1,175 @@
+Virtual machine needs to install SSH server to connect via ssh
+
+
+Linx command
+
+Pwd current path
+
+Control + ^ 退出
+
+To remove a directory that contains other files or directories, use the following command.
+rm -r .aws
+
+~ 在 /User/yibozhu 目录下
+
+Text
+Cat > xxx.txt
+
+Write
+
+Control + D quit
+
+
+遇到问题解决问题
+
+Install AWS CLI on my host machine
+
+yibodeMacBook-Air:~ yibozhu$ curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 19.9M  100 19.9M    0     0  11.6M      0  0:00:01  0:00:01 --:--:-- 11.6M
+yibodeMacBook-Air:~ yibozhu$ sudo installer -pkg AWSCLIV2.pkg -target /
+Password:
+installer: Package name is AWS Command Line Interface
+installer: Installing at base path /
+installer: The install was successful.
+yibodeMacBook-Air:~ yibozhu$ which aws
+/usr/local/bin/aws
+yibodeMacBook-Air:~ yibozhu$ aws --version
+aws-cli/2.0.0 Python/3.7.4 Darwin/18.7.0 botocore/2.0.0dev4
+
+/////////////////////////////////////////////////////////////
+How to run .sh (script)
+Cd directory
+Chmod 755 name.sh (execution)
+./submit.sh (run)
+/////////////////////////////////////////////////////////////
+
+Required Permissions for IAM Users
+
+	To create the service role
+aws iam create-role --role-name vmimport --assume-role-policy-document "file:///Users/yibozhu/Desktop/trust-policy.json"
+
+(file:///Users/yibozhu/Desktop/trust-policy.json)
+
+Create a file named role-policy.json 
+
+{
+   "Version":"2012-10-17",
+   "Statement":[
+      {
+         "Effect":"Allow",
+         "Action":[
+            "s3:GetBucketLocation",
+            "s3:GetObject",
+            "s3:ListBucket" 
+         ],
+         "Resource":[
+            "arn:aws:s3:::disk-image-file-bucket", yibo2 in
+            "arn:aws:s3:::disk-image-file-bucket/*"
+         ]
+      },
+      {
+         "Effect":"Allow",
+         "Action":[
+            "s3:GetBucketLocation",
+            "s3:GetObject",
+            "s3:ListBucket",
+            "s3:PutObject",
+            "s3:GetBucketAcl"
+         ],
+         "Resource":[
+            "arn:aws:s3:::export-bucket", yibo45zhu out
+            "arn:aws:s3:::export-bucket/*"
+         ]
+      },
+      {
+         "Effect":"Allow",
+         "Action":[
+            "ec2:ModifySnapshotAttribute",
+            "ec2:CopySnapshot",
+            "ec2:RegisterImage",
+            "ec2:Describe*"
+         ],
+         "Resource":"*"
+      }
+   ]
+}
+
+aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document "file:///Users/yibozhu/Desktop/role-policy.json"
+
+/////////////////////////////////////////////////////
+
+Image import
+
+Export Your VM from its Virtualization Environment
+
+Import Your VM as an Image to Amazon EC2
+
+Example 1: Import an OVA
+aws ec2 import-image --description "My server VM" --disk-containers "file://C:\import\containers.json"
+
+aws ec2 import-image --description “Ubuntu2” --disk-containers "file:///Users/yibozhu/Desktop/containers.json"
+
+Containers.json example:
+[
+  {
+    "Description": "My Server OVA",
+    "Format": "ova",
+    "UserBucket": {
+        "S3Bucket": "my-import-bucket",
+        "S3Key": "vms/my-server-vm.ova"
+    }
+}]
+
+
+[
+  {
+    "Description": "My Server OVA",
+    "Format": "ova",
+    "UserBucket": {
+        "S3Bucket": "yibo2",
+        "S3Key": "Ubuntu2.ova"
+    }
+}]
+
+
+Check state
+aws ec2 describe-import-image-tasks --import-task-ids import-ami-0fcb676c6007ffc5f
+
+//////////////////////////////////////////
+Log in use ssh
+ssh yibo@ec2-3-86-149-14.compute-1.amazonaws.com
+
+Virtual machine needs to install SSH server to connect via ssh
+
+
+Error:
+1. You must specify a region. You can also configure your region by running "aws configure".
+
+Solution:
+Add region to credentials
+REGION=us-east-1
+
+Another problem: error solved when add region
+An error occurred (RequestExpired) when calling the ImportImage operation: Request has expired.
+
+RequestExpired means that the time that the request was signed with is 15 minutes off from the time that the server that received your request has. 
+
+
+2. An error occurred (RequestExpired) when calling the ImportImage operation: Request has expired.
+Because the content of credential changes, need to update it.
+
+[default]
+region=us-east-1
+aws_access_key_id=ASIAYAVQAAAVAW3MO2W5
+aws_secret_access_key=q9mxBIJiz2sFCSsfCXg7mEgmncUxolae7H0R+rYY
+aws_session_token=FwoGZXIvYXdzEN7//////////wEaDKiVrkM+kfNcdOunOSK8ARISxfIO0GLUs4msMWs6wGDaArX3AY/LpHreFqM4jBPl4z0eTqCM1IEgxme7eqiL/exfbHXOGCiPxJibHT97/H63oOfZeUkXRF6N5kxySIduErCcVr3ORZ8Ze0URoxZdDEav6GfGjjnTaubCmPa/E32h+yq/gYcZA3+bR/yzkx5kSuuk1rB5wE7OzCa/L0E4liAxcTLr6yPqUxPe7IMkScxeLQLMAIA42es19k0TD8t6JoLd2go3uGS4/HroKK2V1vIFMi1o2Yt9+L+tzgaWeCVHGpgZr7v1QjTfruAHw6nO5/RTEzXYobEdUtiKrNmziT8=
+
+3. An error occurred (InvalidParameter) when calling the ImportImage operation: Unsupported non-ASCII characters
+
+注意“”
+“”
+英文中文都不对，这个引号要完全一样才符合code的要求
+texteditor也不行
+

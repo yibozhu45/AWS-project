@@ -1,0 +1,4 @@
+08:00:27:d8:39:1d
+yibo
+yibo-VirtualBox
+4.15.0-45-generic

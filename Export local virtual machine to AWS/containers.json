@@ -1,0 +1,11 @@
+
+ 
+ [
+   {
+     "Description": "My Server OVA",
+     "Format": "ova",
+     "UserBucket": {
+         "S3Bucket": "yibo2",
+         "S3Key": "Ubuntu2.ova"
+     }
+ }]
