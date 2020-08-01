@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>TA Application Data</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+    
+    <style>
+        
+        figure {
+    width: 650px;
+    text-align: center;
+    font-size: 150%;
+}
+        figcaption {
+    display: block;
+    font-weight: bold;
+    font-size: 120%;
+    padding-bottom: 30px;
+}
+        
+        table {
+    border-collapse: collapse;
+    border: 1px solid grey;
+    border-radius: 50%;
+    margin: auto;
+}
+
+th, td {
+    border: 1px solid gray;
+    padding: 15px;
+}
+
+tbody tr:nth-child(even) td {
+    background-color: gainsboro;
+}
+    </style> 
+    
+</head>
+    
+<body>
+        <!-- Header -->
+        <header>
+            <img src="image/logo.png" alt="logo" width="85">
+            <h2 style="font-size: 200%">Teaching Assistant Application</h2>
+            <h3>College of sciences</h3>
+        </header>
+        
+        <!-- Nav -->
+        <nav id="nav_menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="description.html">Program Description</a></li>
+                <li><a href="application.html">TA Application</a></li>
+                <li><a href="gpa.html">GPA Calculation</a></li>
+                <li><a href="info.html">Information of CS</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <figure>
+                <figcaption>Teachong Assistant Application Data</figcaption>
+              <table>
+                    <tbody>
+                    <tr>
+                        <td>First name</td>
+                        <td>
+                <script>
+                    var firstname = localStorage.getItem("firstname");
+                    document.write(firstname);
+                </script> 
+                        </td>
+                    </tr>
+ 
+                    <tr>
+                        <td>Last name</td>
+                        <td>
+                <script>
+                    var lastname = localStorage.getItem("lastname");
+                    document.write(lastname);
+                </script>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Gender</td>
+                        <td>
+                <script>
+                    var gender = localStorage.getItem("gender");
+                    document.write(gender);
+                </script>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Email address</td>
+                        <td>
+                <script>
+                    var email = localStorage.getItem("email");
+                    document.write(email);
+                </script>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>Student number</td>
+                        <td>
+                <script>
+                    var ID = localStorage.getItem("ID");
+                    document.write(ID);
+                </script>
+                        </td>
+                    </tr>
+                   
+                    <tr>
+                        <td>GPA</td>
+                        <td>
+                <script>
+                    var GPA = localStorage.getItem("GPA");
+                    document.write(GPA);
+                </script>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>Submission date</td>
+                        <td>
+                <script>
+                    var date = localStorage.getItem("date");
+                    document.write(date);
+                </script>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Comments</td>
+                        <td>
+                <script>
+                    var subject = localStorage.getItem("subject");
+                    document.write(subject);
+                </script>
+                        </td>
+                    </tr>
+                </table>
+            </figure>
+        </main>
+        
+        <footer>
+            <div id="column1">
+                <h3>MATHEMATICS AND COMPUTER SCIENCE</h3>
+                <p>The Department of Mathematics and Computer Science is a place that brings motivated students, professors, and professionals together. We train high-quality students to become problem solvers. Our majors are active and engaged in campus life. Students clubs such as Math Club, Computer Science Club and Engineering Club are among the most active on campus. This allows us to provide exceptional future prospects to all those who study with us or collaborate with us.</p>
+                <p>&copy; Yibo Zhu</p>
+            </div>
+            <div id="column2">
+                <h3>FOLLOW US!</h3>
+                <ul id="footerlink">
+                    <li><a href="https://twitter.com/aumontgomery">Twitter</a></li>
+                    <li><a href="https://www.facebook.com/AUM.COS/">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/auburnmontgomery/">Instagram</a></li>
+                </ul>      
+            </div>     
+        </footer>
+</body>
+</html>

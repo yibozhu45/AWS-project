@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+    
+    <head>
+        <title>AUM Computer Science and Mathematics</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="gpa.js"></script>
+        
+        <style>
+            #calculator {
+                box-sizing: border-box;
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                padding: 20px;
+                
+            }
+            
+            #col1 {
+                float: left;
+                width: 35%;
+                padding-right: 10px;
+            }
+            
+            #col2 {
+                float: left;
+                width: 35%;
+            }
+            
+            #add {
+                float:right;
+                margin-top: 42px;
+                margin-right: 20px;
+                background-color: #4691A4;
+                width: 150px;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            #add:hover {background-color: #45a049;}
+            
+            #calculate {
+                background-color: #4691A4;
+                width: 100px;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            #calculate:hover {background-color: #45a049;}
+            
+            #display{
+                margin-top: 20px;
+                height: 200px;
+                margin-bottom: 10px;
+            }
+            
+
+        </style>
+    </head>
+    
+    <body>
+        <!-- Header -->
+        <header>
+            <img src="image/logo.png" alt="logo" width="85">
+            <h2>GPA Calculation</h2>
+            <h3>College of sciences</h3>
+        </header>
+        
+        <!-- Nav -->
+        <nav id="nav_menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="description.html">Program Description</a></li>
+                <li><a href="application.html">TA Application</a></li>
+                <li><a href="gpa.html">GPA Calculation</a></li>
+                <li><a href="info.html">Information of CS</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <h2>GPA Calculator</h2>
+            <div id="calculator">
+            
+            <div id="col1">
+            <label for="credit_hour">Credit Hour: </label>
+            <input type="text" id="credit_hour" required>
+            </div>
+            
+            <div id="col2">
+            <label for="letter_grade">Letter Grade: </label>
+            <input type="text" id="letter_grade" required>
+            </div>
+
+	        <input type="button" id="add" value="Add new course" >  
+            <textarea id="display"></textarea>
+            <input type="button" id="calculate" value="calculate" ><br>
+            </div>
+        </main>
+        
+        <footer>
+            <div id="column1">
+                <h3>MATHEMATICS AND COMPUTER SCIENCE</h3>
+                <p>The Department of Mathematics and Computer Science is a place that brings motivated students, professors, and professionals together. We train high-quality students to become problem solvers. Our majors are active and engaged in campus life. Students clubs such as Math Club, Computer Science Club and Engineering Club are among the most active on campus. This allows us to provide exceptional future prospects to all those who study with us or collaborate with us.</p>
+                <p>&copy; Yibo Zhu</p>
+            </div>
+            <div id="column2">
+                <h3>FOLLOW US!</h3>
+                <ul id="footerlink">
+                    <li><a href="https://twitter.com/aumontgomery">Twitter</a></li>
+                    <li><a href="https://www.facebook.com/AUM.COS/">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/auburnmontgomery/">Instagram</a></li>
+                </ul>      
+            </div>     
+        </footer>
+
+    </body>
+    
+</html>

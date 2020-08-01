@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html>
+    
+    <head>
+        <title>AUM Computer Science and Mathematics</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        
+        <script>
+        // Called on form's `onsubmit`
+        function tosubmit() { 
+            
+            //Firstname
+            var firstname = document.getElementById("firstname").value;
+            localStorage.setItem("firstname", firstname);          
+            
+            //Lastname
+            var lastname = document.getElementById("lastname").value;
+            localStorage.setItem("lastname", lastname);
+            
+            //Gender
+            var gender;
+            if (document.getElementById("female").checked) {
+                gender = document.getElementById("female").value;
+            }
+            else {
+                gender = document.getElementById("male").value;
+            }
+            localStorage.setItem("gender", gender); 
+
+            //Email
+            var email = document.getElementById("email").value;
+            localStorage.setItem("email", email);
+            
+            //Student number
+            var ID = document.getElementById("ID").value;
+            localStorage.setItem("ID", ID);
+            
+            //GPA
+            var GPA = document.getElementById("GPA").value;
+            localStorage.setItem("GPA", GPA);
+            
+            //Submission date
+            var date = document.getElementById("date").value;
+            localStorage.setItem("date", date);
+
+            //Comments
+            var subject = document.getElementById("subject").value;
+            localStorage.setItem("subject", subject);
+            
+            return true;
+        }
+        </script>
+    </head>
+    
+    <body>
+        <!-- Header -->
+        <header>
+            <img src="image/logo.png" alt="logo" width="85">
+            <h2 style="font-size: 200%">Teaching Assistant Application</h2>
+            <h3>College of sciences</h3>
+        </header>
+        
+        <!-- Nav -->
+        <nav id="nav_menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="description.html">Program Description</a></li>
+                <li><a href="application.html">TA Application</a></li>
+                <li><a href="gpa.html">GPA Calculation</a></li>
+                <li><a href="info.html">Information of CS</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <h2>TA Application form</h2>
+            
+            <div class="container">
+            <form name="myform" onsubmit="tosubmit();" action="survey_data.html">
+                
+                <div class="row">
+                    <div class="col-25">
+                        <label for="firstname">First name:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="firstname" id="firstname" autofocus required required>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-25">
+                        <label for="lastname">Last name:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="lastname" id="lastname" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="gender">Gender:</label>
+                    </div>
+                    <div class="col-75">
+                <label class="container_checkbox">Female
+                    <input id="female" type="radio" checked="checked" name="radio" value="Female">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container_checkbox">Male
+                    <input id="male" type="radio" name="radio" value="Male">
+                    <span class="checkmark"></span>
+                </label>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-25">
+                        <label for="email">Email address:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="email" id="email" required>
+                    </div>
+                </div>
+                
+                 <div class="row">
+                    <div class="col-25">
+                        <label for="ID">Student number:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="ID" id="ID" required>
+                    </div>
+                </div> 
+                
+                <div class="row">
+                    <div class="col-25">
+                        <label for="GPA">GPA</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="GPA" id="GPA" required>
+                    </div>
+                </div> 
+                
+                <div class="row">
+                    <div class="col-25">
+                        <label for="date">Submission date</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="date" name="date" id="date" required> 
+                    </div>
+                </div> 
+                
+                <div class="row">
+                    <div class="col-25">
+                        <label for="subject">Comments</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea id="subject" name="subject" placeholder="Write your comments.." style="height:200px"></textarea>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <input type="submit" name="button" id="button" value="Submit"> <input type="reset" value="Reset"> 
+                </div>
+                              
+            </form>
+            </div>
+        </main>
+        
+        <footer>
+            <div id="column1">
+                <h3>MATHEMATICS AND COMPUTER SCIENCE</h3>
+                <p>The Department of Mathematics and Computer Science is a place that brings motivated students, professors, and professionals together. We train high-quality students to become problem solvers. Our majors are active and engaged in campus life. Students clubs such as Math Club, Computer Science Club and Engineering Club are among the most active on campus. This allows us to provide exceptional future prospects to all those who study with us or collaborate with us.</p>
+                <p>&copy; Yibo Zhu</p>
+            </div>
+            <div id="column2">
+                <h3>FOLLOW US!</h3>
+                <ul id="footerlink">
+                    <li><a href="https://twitter.com/aumontgomery">Twitter</a></li>
+                    <li><a href="https://www.facebook.com/AUM.COS/">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/auburnmontgomery/">Instagram</a></li>
+                </ul>      
+            </div>     
+        </footer>
+
+    </body>
+    
+</html>

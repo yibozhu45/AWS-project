@@ -1,0 +1,391 @@
+*{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+/* Navigation menu */
+#nav_menu {
+	clear: left;
+}
+#nav_menu ul {
+	list-style: none;
+	position: relative;
+}
+#nav_menu ul li {
+	float: left;
+}
+#nav_menu ul ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+}
+#nav_menu ul ul li {
+	float: none;
+}
+#nav_menu ul li:hover > ul {
+	display: block;
+}
+#nav_menu > ul::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+#nav_menu ul {
+	margin: 0;
+	padding: 0;
+}
+#nav_menu ul li a {
+	text-align: center;
+	display: block;
+	width: 158.8122px;
+	padding: .7em 0;
+	text-decoration: none;
+	background-color: black;
+	color: white;
+}
+#nav_menu ul li a.current {
+	color: orange;
+}
+#nav_menu ul li a:hover, #nav_menu ul li a:focus {
+	background-color: gray;
+}
+
+a:link{
+    font-weight: bold;
+    color: orange;
+}
+
+a:hover{
+    color: gray;
+}
+
+body  {
+    -ms-overflow-style: scrollbar;
+    font-family: "Poppins";
+	width: 800px;
+	background-color: white;
+	margin: auto; 
+	padding: 0;
+	border: 3px solid black;
+	box-shadow: 0 10px 20px 10px;
+}
+h1, h2, h3, p {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	border-bottom: 2px solid black; 
+	padding: 15px;
+	background-image: -webkit-linear-gradient(45deg, white 0%, orange 75%, black 100%);
+	background-image: -moz-linear-gradient(45deg, white 0%, orange 75%, black 100%);
+	background-image: -o-linear-gradient(45deg, white 0%, orange 75%, black 100%);
+	background-image: linear-gradient(45deg, white 0%, orange 75%, black 100%); 
+} 
+header img{
+    float: left;
+}
+
+header h2{
+    font-size: 240%;
+    text-indent: 25px;
+}
+
+header h3{
+    font-size: 125%;
+    text-indent: 25px;
+}
+
+main {
+	padding: 30px;
+}
+main h1 { 
+	font-size: 150%;
+	margin-bottom: .5em;
+}
+main h1:first-letter { 
+	font-size: 200%;
+}
+main h2 {
+	font-size: 125%;
+	margin: .8em 0 .5em 0;
+}
+main h3 {
+	font-size: 115%;
+	margin-bottom: .5em;
+}
+main p {
+	margin-bottom:.5em;
+    line-height: 1.3;
+}
+main ul {
+	margin-top: 0;
+}
+
+ul li {
+    line-height: 1.3;
+}
+
+#moreInfo {
+    list-style: none;
+}
+
+/*Home*/
+            #study{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                border: 8px solid #d3d3d3;
+            }
+            #home {
+                padding-left: 20px;
+                font-size: 180%;
+            }
+            #home_h2 {
+                padding-top: 10px;
+                padding-left: 20px;
+            }
+            #news{
+                width: 200px;
+                height: 100px;
+                float: left;
+                border: 4px solid #d3d3d3;
+                clear: both; 
+            }
+            .news {
+                width: 200px;
+                height: 100px;
+                float: left;
+                border: 4px solid #d3d3d3;
+                clear: both;
+                margin-top: 10px;   
+            }
+            .text1 {
+                margin-left: 215px;
+                margin-top: 20px;
+            }
+            .text2 {
+                margin-left: 215px;
+            }
+            #title {
+                text-decoration: underline;
+                margin-left: 14px;
+                color: orange;
+            }
+            .title {
+                text-decoration: underline;
+                margin-left: 14px;
+                color: brown;
+            }
+
+/* Form */
+.container {
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.container_checkbox {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 35px;
+    -webkit-user-select: none;
+    -mox-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container_checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.checkmark {
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border-radius: 50%; 
+}
+
+.container_checkbox:hover input ~ .checkmark {
+    background-color: gray;
+}
+
+.container_checkbox input:checked ~ .checkmark {
+    background-color: #4691A4;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container_checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.container_checkbox .checkmark:after {
+    top:9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+        
+}
+
+input[type=text], input[type=date], textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+input[type=submit] {
+  margin-top: 20px;
+  background-color: #4691A4;
+  width: 150px;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  margin-right: 100px;
+
+}
+
+input[type=reset] {
+  margin-top: 20px;
+  background-color: #4691A4;
+  width: 150px;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left; 
+  margin-left: 100px;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+input[type=reset]:hover {
+  background-color: #45a049;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+   
+/* Table */
+figure {
+    width: 650px;
+    text-align: center;
+    font-size: 115%;
+}
+
+figcaption {
+    display: block;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid grey;
+    margin: 9px;
+}
+
+thead {
+    background-color: burlywood;
+}
+
+th, td {
+    border: 1px solid gray;
+}
+
+tbody tr:nth-child(even) td {
+    background-color: gainsboro;
+}
+/* Footer */
+footer { 
+	border-top: 3px solid black;
+	padding: 10px;
+    background-color: black;
+    content: "";
+    display: table;
+    clear: both;
+} 
+footer p {
+    color: gray;
+    font-size: 90%;
+}
+
+footer h3 {
+    color: white;
+    font-size: 90%;
+    padding-bottom: 10px;
+}
+
+#column1 {
+  float: left;
+  width: 70%;
+  padding: 10px;
+    border-right: solid gray;
+    border-right-width: thin;
+}
+
+#column2 {
+    padding-left: 72%;
+    padding-top: 20px;
+}
+
+footer a{
+    color: gray; 
+}
+
+#footerlink a:hover{
+    color: orange;
+}
+
+#footerlink li {
+    padding-top: 5px;
+}
+
+#footerlink {
+    padding: 0;
+    margin: 0;
+}
+
